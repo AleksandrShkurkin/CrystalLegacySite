@@ -1,0 +1,477 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url('fonts/Pokemon_Pixel_Font_Regular/pokemon_pixel_font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PixelCopyright';
+    src: url('fonts/gome-pixel-font/GomePixel-ARJd7.otf');
+}
+
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about,
+#gallery,
+#developers {
+    scroll-margin-top: 90px;
+}
+
+
+.navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.drawer {
+    display: flex;
+    width: 5%;
+    min-width: 90px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+div.title {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'PixelFont';
+    font-size: 50px;
+}
+
+div.button {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    gap: 15px;
+}
+
+.transparent-button::part(base) {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+a.menu {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+    font-family: 'PixelFont';
+    font-size: 40px;
+}
+
+.drawer-placement-start::part(title) {
+    font-family: 'PixelFont';
+    font-size: 30px;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+div.panoram {
+    display: flex;
+    background-image: url('img/dark-forest.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.text-panoram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.text {
+    color: white;
+    font-family: 'PixelFont';
+    letter-spacing: 2px;
+}
+
+div.buttons-download {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.equal-buttons sl-button::part(base) {
+    width: 150px;
+}
+
+.textPanoram {
+    width: 80%;
+    font-size: 35px;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+div.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+div.title-main {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    font-family: 'PixelFont';
+    font-size: 50px;
+    text-indent: 30px;
+}
+
+div.text-about {
+    width: 100%;
+    height: auto;
+    font-family: 'PixelFont';
+    font-size: 30px;
+    text-align: justify;
+    letter-spacing: 2px;
+    text-indent: 30px;
+}
+
+ul.list-about {
+    list-style: none;
+    margin-top: 5px;
+}
+
+ul.list-about li {
+    position: relative;
+}
+
+ul.list-about li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+ul.list-about li::before {
+    content: '🔮';
+    position: absolute;
+    left: -45px;
+    top: -3px;
+}
+
+div.gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+div.gallery-images {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.mouse-dragging {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+sl-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.item-caption {
+    font-family: 'PixelFont';
+    width: 60%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 1s ease;
+}
+
+div.item-caption.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+div.developers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+sl-details.custom-icons::part(summary-icon) {
+    rotate: none;
+}
+
+div.dev-list sl-details:not(:last-of-type) {
+    margin-bottom: var(--sl-spacing-x-small);
+}
+
+div.dev-list {
+    padding: 0 15px 30px;
+    font-family: 'PixelFont';
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+div.person-title {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    padding-left: 10px;
+}
+
+div.person-info {
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+div.team-title {
+    padding-left: 30px;
+    text-indent: 0;
+    gap: 15px;
+}
+
+footer.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.studio {
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PixelFont';
+    font-size: 35px;
+    min-width: 330px;
+}
+
+div.links {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+img.logo-image {
+    width: 110px;
+}
+
+@media (max-width: 669px) {
+    div.links {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    div.studio {
+        width: 75%;
+    }
+
+    div.links {
+        width: 25%;
+    }
+}
+
+@media (max-width: 600px) {
+    div.studio {
+        min-width: 100px;
+    }
+
+    div.links {
+        min-width: 127px;
+    }
+}
+
+@media (max-width: 430px) {
+    div.studio {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 379px) {
+    div.studio {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 340px) {
+    div.person-title {
+        font-size: 35px;
+    }
+
+    div.person-info {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    div.mouse-dragging {
+        width: 80%;
+    }
+}
+
+@media (max-width: 900px) {
+    div.mouse-dragging {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    div.panoram {
+        height: 500px;
+    }
+
+    .textPanoram {
+        width: 90%;
+        font-size: 30px;
+    }
+
+    div.text-about {
+        font-size: 25px;
+    }
+
+    div.item-caption {
+        width: 90%;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 800px) {
+    div.panoram {
+        height: 600px;
+    }
+
+    .textPanoram {
+        width: 95%;
+        font-size: 25px;
+    }
+
+    div.text-about {
+        font-size: 22px;
+    }
+
+    div.item-caption {
+        width: 95%;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    div.panoram {
+        height: 700px;
+    }
+
+    .textPanoram {
+        width: 100%;
+        font-size: 22px;
+    }
+
+    div.text-about {
+        font-size: 20px;
+    }
+
+    div.item-caption {
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+
+@media (prefers-color-scheme: light) {
+    .navbar {
+        background-color: lightgrey;
+        box-shadow: 0px 1px 5px gray;
+    }
+
+    footer.footer {
+        background-color: lightgrey;
+        box-shadow: 0px 1px 5px gray;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background-color: #1C2833;
+        box-shadow: 0px 2px 5px #2E3B47;
+    }
+
+    footer.footer {
+        background-color: #1C2833;
+        box-shadow: 0px 2px 5px #2E3B47;
+    }
+}
+
+@media (max-width: 449px) {
+    div.drawer {
+        width: 3%;
+        min-width: 60px;
+    }
+
+    div.title {
+        width: 47%;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 374px) {
+    div.button {
+        padding-right: 10px;
+        gap: 5px;
+    }
+}

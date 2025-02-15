@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css"
+    as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/dark.css"
+    as="style">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" media="(prefers-color-scheme:light)"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css" />
+  <link rel="stylesheet" media="(prefers-color-scheme:dark)"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/dark.css"
+    onload="document.documentElement.classList.add('sl-theme-dark');" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"></script>
+  <script src="script.js" defer></script>
+  <style>
+    sl-button.darkblue::part(base) {
+      background-color: hsl(200.4 98% 39.4%);
+      border-color: hsl(200.4 98% 39.4%);
+      color: white;
+    }
+
+    sl-button.darkgreen::part(base) {
+      background-color: hsl(142.1 76.2% 36.3%);
+      ;
+      border-color: hsl(142.1 76.2% 36.3%);
+      color: white;
+    }
+  </style>
+</head>
+
+<body id="start">
+  <nav class="navbar">
+    <div class="drawer">
+      <sl-button size="large" class="transparent-button">
+        <sl-icon name="list" style="transform: scale(2);"></sl-icon>
+      </sl-button>
+    </div>
+    <div class="title">CrystalLegacy</div>
+    <div class="button">
+      <sl-button variant="default" size="large" circle href="https://t.me/CrystalLegacyByWonderEdgeStudio"
+        target="_blank">
+        <sl-icon name="telegram" style="transform: scale(2.5);"></sl-icon>
+      </sl-button>
+      <sl-button variant="default" size="large" circle href="https://github.com/AleksandrShkurkin/CrystalLegacy"
+        target="_blank">
+        <sl-icon name="github" style="transform: scale(2.5);"></sl-icon>
+      </sl-button>
+    </div>
+  </nav>
+  <main>
+    <div class="panoram">
+      <div class="text-panoram">
+        <div class="text" style="height: 30%; font-size: 50px;">Enter a world of CrystalLegacy!</strong></div>
+        <div class="text" style="height: 25%;">
+          <div class="textPanoram">
+            Explore magical landscapes, defeat your enemies and uncover
+            the mystery of Crystals... Are you prepared for this challendge?
+          </div>
+        </div>
+        <div class="buttons-download">
+          <sl-button-group class="equal-buttons">
+            <sl-button variant="primary" size="large" class="darkblue">
+              <sl-icon slot="prefix" name="windows"></sl-icon>
+              Windows
+            </sl-button>
+            <sl-button variant="success" size="large" class="darkgreen">
+              <sl-icon slot="prefix" name="ubuntu"></sl-icon>
+              Linux
+            </sl-button>
+          </sl-button-group>
+        </div>
+      </div>
+    </div>
+    <div id="about" class="about">
+      <div class="title-main">
+        About
+        <sl-divider style="--width: 3px; --color: gray;"></sl-divider>
+      </div>
+      <div class="text-about">
+        <div>
+          CrystalLegacy is an ARPG with elements of survival, farming and exploration. The Protagonist, who unexpectedly
+          got a unique ability to level up, travels the world, fights with monsters, upgarades his equipment
+          and prepares for the final battle with a powerfull ancient beast.
+        </div>
+        <div>
+          Game features:
+        </div>
+        <div>
+          <ul class="list-about">
+            <li>Dynamic fighting system – use melee and range weapons, upgrade your skills and strategically
+              choose your allies.</li>
+            <li>Companions – tame slimes, goblins and other creatures that will help you in battles.</li>
+            <li>Farming and surival – grow crops, cook food and hold your hero in optimal form.</li>
+            <li>Breathtaking story – explore the world, uncover mysteries and find the truth about your power.</li>
+            <li>Various minigames – fishing, cooking, “dream adventures” and other fun stuff.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="gallery" class="gallery">
+      <div class="title-main">
+        Gallery
+        <sl-divider style="--width: 3px; --color: gray;"></sl-divider>
+      </div>
+      <div class="gallery-images">
+        <div class="mouse-dragging">
+          <sl-carousel class="scroll-hint aspect-ratio" pagination loop
+            style="--scroll-hint: 5%; --aspect-ratio: 16/9;">
+            <sl-carousel-item>
+              <img alt="Game menu mockup" src="img/menu.jpg" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <img alt="Fighting mockup" src="img/fight.jpg" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <img alt="Dialog mockup" src="img/dialog.jpg" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <img alt="Inventory mockup" src="img/inventory.jpg" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+              <img alt="Shop mockup" src="img/shop.jpg" />
+            </sl-carousel-item>
+          </sl-carousel>
+        </div>
+        <div class="item-caption"></div>
+      </div>
+    </div>
+    <div id="developers" class="developers">
+      <div class="title-main">
+        Team
+        <sl-divider style="--width: 3px; --color: gray;"></sl-divider>
+      </div>
+      <div class="dev-list">
+        <sl-details summary="Team Lead" class="custom-icons">
+          <sl-icon name="envelope" slot="expand-icon"></sl-icon>
+          <sl-icon name="envelope-open" slot="collapse-icon"></sl-icon>
+          <div class="person-title">
+            <sl-avatar image="img/TeamL.jpg" lable="Team Lead avatar" style="margin-right: 10px;"></sl-avatar>
+            Anastasiia Matakova
+          </div>
+          <sl-divider style="--width: 1.5px; --color: gray;"></sl-divider>
+          <div class="person-info">
+            Responsibilities:<br>
+            <ul>
+              <li>provide technical direction;</li>
+              <li>provide management reporting;</li>
+              <li>provide task planning and distribution;</li>
+            </ul>
+          </div>
+        </sl-details>
+        <sl-details summary="Graphical Designer" class="custom-icons">
+          <sl-icon name="envelope" slot="expand-icon"></sl-icon>
+          <sl-icon name="envelope-open" slot="collapse-icon"></sl-icon>
+          <div class="person-title">
+            <sl-avatar image="img/GrafD.jpg" lable="Graphical Designer avatar" style="margin-right: 10px;"></sl-avatar>
+
+          </div>
+          <sl-divider style="--width: 1.5px; --color: gray;"></sl-divider>
+          <div class="person-info">
+            Responsibilities:<br>
+            <ul>
+              <li>find or create sprites;</li>
+              <li>animate sprites;</li>
+              <li>apply graphical materials;</li>
+            </ul>
+          </div>
+        </sl-details>
+        <sl-details summary="Game Designer" class="custom-icons">
+          <sl-icon name="envelope" slot="expand-icon"></sl-icon>
+          <sl-icon name="envelope-open" slot="collapse-icon"></sl-icon>
+          <div class="person-title">
+            <sl-avatar image="img/GameD.jpg" lable="Game Designer avatar" style="margin-right: 10px;"></sl-avatar>
+
+          </div>
+          <sl-divider style="--width: 1.5px; --color: gray;"></sl-divider>
+          <div class="person-info">
+            Responsibilities:<br>
+            <ul>
+              <li>create a plan of a game world;</li>
+              <li>make fight and financial balancing decisions;</li>
+              <li>outline needed game mechanics;</li>
+            </ul>
+          </div>
+        </sl-details>
+        <sl-details summary="Scriptwriter" class="custom-icons">
+          <sl-icon name="envelope" slot="expand-icon"></sl-icon>
+          <sl-icon name="envelope-open" slot="collapse-icon"></sl-icon>
+          <div class="person-title">
+            <sl-avatar image="img/Script.jpg" lable="Scriptwriter avatar" style="margin-right: 10px;"></sl-avatar>
+
+          </div>
+          <sl-divider style="--width: 1.5px; --color: gray;"></sl-divider>
+          <div class="person-info">
+            Responsibilities:<br>
+            <ul>
+              <li>create a story;</li>
+              <li>make NPC and player dialogs;</li>
+            </ul>
+          </div>
+        </sl-details>
+        <sl-details summary="Developer" class="custom-icons">
+          <sl-icon name="envelope" slot="expand-icon"></sl-icon>
+          <sl-icon name="envelope-open" slot="collapse-icon"></sl-icon>
+          <div class="person-title">
+            <sl-avatar image="img/Dev.jpg" lable="Developer avatar" style="margin-right: 10px;"></sl-avatar>
+            Oleksandr Shkurkin
+          </div>
+          <sl-divider style="--width: 1.5px; --color: gray;"></sl-divider>
+          <div class="person-info">
+            Responsiblities: <br>
+            <ul>
+              <li>implementation of planned game mechanics;</li>
+              <li>refining already existing mechanics;</li>
+              <li>testing;</li>
+            </ul>
+          </div>
+        </sl-details>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="studio">
+      <img src="img/logo.png" alt="WonderEdgeStudio logo" class="logo-image">
+      <div style="text-align: center;"><span style="font-family: 'PixelCopyright'; margin-right: 5px;">©</span> 2025 WonderEdgeStudio</div>
+    </div>
+    <div class="links">
+      <sl-button variant="default" size="large" circle href="https://t.me/WonderEdgeStudio" target="_blank">
+        <sl-icon name="telegram" style="transform: scale(2.2);"></sl-icon>
+      </sl-button>
+      <sl-button variant="default" size="large" circle href="https://www.instagram.com/wonderedgestudio/"
+        target="_blank">
+        <sl-icon name="facebook" style="transform: scale(2.2);"></sl-icon>
+      </sl-button>
+      <sl-button variant="default" size="large" style="width: 50px;"
+        href="https://www.linkedin.com/in/wonderedge-studio-0665b8351/" target="_blank">
+        <sl-icon name="linkedin" style="transform: scale(2.2);"></sl-icon>
+      </sl-button>
+      <sl-button variant="default" size="large" style="width: 50px;" href="https://www.instagram.com/wonderedgestudio/"
+        target="_blank">
+        <sl-icon name="instagram" style="transform: scale(2.3);"></sl-icon>
+      </sl-button>
+    </div>
+  </footer>
+
+  <sl-drawer label="Navigation" placement="start" class="drawer-placement-start">
+    <a href="#start" class="menu">Start</a>
+    <sl-divider style="--width: 3px; --color: gray"></sl-divider>
+    <a href="#about" class="menu">About</a>
+    <sl-divider style="--width: 3px; --color: gray"></sl-divider>
+    <a href="#gallery" class="menu">Gallery</a>
+    <sl-divider style="--width: 3px; --color: gray"></sl-divider>
+    <a href="#developers" class="menu">Team</a>
+    <sl-button slot="footer" variant="default">Close</sl-button>
+  </sl-drawer>
+</body>
+
+</html>
