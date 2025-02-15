@@ -47,3 +47,22 @@ containerDetails.addEventListener('sl-show', event => {
         [...containerDetails.querySelectorAll('sl-details')].map(details => (details.open = event.target === details));
     }
 });
+
+//registration control and validation
+const dialog = document.querySelector('.dialog-focus');
+const input = document.getElementsByName('Username');
+const openButtonRegWin = document.querySelector('.equal-buttons .darkblue');
+const openButtonRegLin = document.querySelector('.equal-buttons .darkgreen');
+const closeButtonReg = dialog.querySelector('sl-button[slot="footer"]');
+
+//congrats dialog
+const dialogCong = document.querySelector('.dialog-overview');
+const closeButtonCong = dialogCong.querySelector('sl-button[slot="footer"]');
+
+//reg
+openButtonRegWin.addEventListener('click', () => dialog.show());
+openButtonRegLin.addEventListener('click', () => dialog.show());
+closeButtonReg.addEventListener('click', () => { dialog.hide(); setTimeout(() => { dialogCong.show(); }, 200) });
+
+//cong
+closeButtonCong.addEventListener('click', () => dialogCong.hide());
