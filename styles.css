@@ -23,6 +23,36 @@ body {
     scroll-margin-top: 90px;
 }
 
+sl-button.darkblue::part(base) {
+    background-color: hsl(200.4 98% 39.4%);
+    border-color: hsl(200.4 98% 39.4%);
+    color: white;
+}
+
+sl-button.darkgreen::part(base) {
+    background-color: hsl(142.1 76.2% 36.3%);
+    ;
+    border-color: hsl(142.1 76.2% 36.3%);
+    color: white;
+}
+
+sl-button.darkblue::part(base) {
+    transition: transform 0.3s ease;
+    transform-origin: right center;
+  }
+  
+  sl-button.darkblue::part(base):hover {
+    transform: scale(1.1);
+  }
+  
+  sl-button.darkgreen::part(base) {
+    transition: transform 0.3s ease;
+    transform-origin: left center;
+  }
+  
+  sl-button.darkgreen::part(base):hover {
+    transform: scale(1.1);
+  }
 
 .navbar {
     width: 100%;
