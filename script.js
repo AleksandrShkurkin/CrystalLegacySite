@@ -122,7 +122,13 @@ openButtonRegLin.addEventListener('click', () => dialog.show());
                 input.addEventListener('sl-input', () => {
                     if (input.value.trim().length > 28) {
                         input.setCustomValidity('-_-');
-                    } else {
+                    } else if (input.value === "Russia") {
+                        input.setCustomValidity('🐷🔥');
+                    }
+                    else if (input.value === "Belarus") {
+                        input.setCustomValidity('Жыве Беларусь!');
+                    }
+                    else {
                         input.setCustomValidity('');
                     }
                 });
@@ -131,16 +137,13 @@ openButtonRegLin.addEventListener('click', () => dialog.show());
 
         textInput.addEventListener('sl-input', () => {
             const pattern = /^[A-Za-z0-9._: ]+$/;
-            if (textInput.value.trim().length > 100)
-            {
+            if (textInput.value.trim().length > 100) {
                 textInput.setCustomValidity('Up to 100 symbols max.');
             }
-            else if (!pattern.test(textInput.value))
-            {
+            else if (!pattern.test(textInput.value)) {
                 textInput.setCustomValidity('Only latin letters, numbers and "./: " are permitted.');
             }
-            else
-            {
+            else {
                 textInput.setCustomValidity('');
             }
         });
