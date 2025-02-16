@@ -122,9 +122,9 @@ openButtonRegLin.addEventListener('click', () => dialog.show());
                 input.addEventListener('sl-input', () => {
                     if (input.value.trim().length > 28) {
                         input.setCustomValidity('-_-');
-                    } else if (input.value.trim() === 'Russia') {
+                    } else if (input.value.trim().toLowerCase() === 'russia') {
                         input.setCustomValidity('🐷🔥');
-                    } else if (input.value.trim() === 'Belarus') {
+                    } else if (input.value.trim().toLowerCase() === 'belarus') {
                         input.setCustomValidity('Жыве Беларусь!');
                     } else {
                         input.setCustomValidity('');
