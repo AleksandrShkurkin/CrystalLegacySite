@@ -122,13 +122,11 @@ openButtonRegLin.addEventListener('click', () => dialog.show());
                 input.addEventListener('sl-input', () => {
                     if (input.value.trim().length > 28) {
                         input.setCustomValidity('-_-');
-                    } else if (input.value === "Russia") {
+                    } else if (input.value.trim() === 'Russia') {
                         input.setCustomValidity('🐷🔥');
-                    }
-                    else if (input.value === "Belarus") {
+                    } else if (input.value.trim() === 'Belarus') {
                         input.setCustomValidity('Жыве Беларусь!');
-                    }
-                    else {
+                    } else {
                         input.setCustomValidity('');
                     }
                 });
