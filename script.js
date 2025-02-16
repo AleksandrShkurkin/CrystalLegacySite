@@ -75,8 +75,7 @@ openButtonRegLin.addEventListener('click', () => dialog.show());
             const formData = new FormData(form);
             console.log(Object.fromEntries(formData.entries()));
             dialog.hide();
-            inputs.forEach(input => {input.value = ""});
-            textInput.value = "";
+            form.reset();
             dialogCong.show();
         });
 
