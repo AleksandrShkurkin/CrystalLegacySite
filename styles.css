@@ -39,20 +39,20 @@ sl-button.darkgreen::part(base) {
 sl-button.darkblue::part(base) {
     transition: transform 0.3s ease;
     transform-origin: right center;
-  }
-  
-  sl-button.darkblue::part(base):hover {
+}
+
+sl-button.darkblue::part(base):hover {
     transform: scale(1.1);
-  }
-  
-  sl-button.darkgreen::part(base) {
+}
+
+sl-button.darkgreen::part(base) {
     transition: transform 0.3s ease;
     transform-origin: left center;
-  }
-  
-  sl-button.darkgreen::part(base):hover {
+}
+
+sl-button.darkgreen::part(base):hover {
     transform: scale(1.1);
-  }
+}
 
 .navbar {
     width: 100%;
@@ -118,8 +118,7 @@ a.menu {
     font-size: 30px;
 }
 
-.dialog-overview
-{
+.dialog-overview {
     font-family: 'PixelFont';
     font-size: 25px;
     letter-spacing: 2px;
@@ -131,14 +130,14 @@ a.menu {
     letter-spacing: 0px;
 }
 
-sl-input::part(form-control-label), sl-textarea::part(form-control-label){
+sl-input::part(form-control-label),
+sl-textarea::part(form-control-label) {
     font-family: 'PixelFont';
     font-size: 30px;
     padding-left: 10px;
 }
 
-sl-dialog sl-input:not(:first-child)
-{
+sl-dialog sl-input:not(:first-child) {
     margin-top: 15px;
 }
 
