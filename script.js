@@ -48,21 +48,105 @@ containerDetails.addEventListener('sl-show', event => {
     }
 });
 
-//registration control and validation
+//registration controls
 const dialog = document.querySelector('.dialog-focus');
-const input = document.getElementsByName('Username');
 const openButtonRegWin = document.querySelector('.equal-buttons .darkblue');
 const openButtonRegLin = document.querySelector('.equal-buttons .darkgreen');
 const closeButtonReg = dialog.querySelector('sl-button[slot="footer"]');
+const form = document.getElementById('formReg');
+const inputs = form.querySelectorAll('sl-input');
+const textInput = form.querySelector('sl-textarea');
 
 //congrats dialog
 const dialogCong = document.querySelector('.dialog-overview');
 const closeButtonCong = dialogCong.querySelector('sl-button[slot="footer"]');
 
-//reg
+//registration validation
 openButtonRegWin.addEventListener('click', () => dialog.show());
 openButtonRegLin.addEventListener('click', () => dialog.show());
-closeButtonReg.addEventListener('click', () => { dialog.hide(); setTimeout(() => { dialogCong.show(); }, 200) });
+(async () => {
+    await Promise.all([
+        customElements.whenDefined('sl-button'),
+        customElements.whenDefined('sl-input'),
+        customElements.whenDefined('sl-textarea')
+    ]).then(() => {
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            console.log(Object.fromEntries(formData.entries()));
+            dialog.hide();
+            inputs.forEach(input => {input.value = ""});
+            textInput.value = "";
+            dialogCong.show();
+        });
+
+        inputs.forEach(input => {
+            if (input.name === 'Username') {
+                input.addEventListener('sl-input', () => {
+                    if (input.value.trim().length > 15) {
+                        console.log(input.value.trim().length);
+                        input.setCustomValidity('Username should be less than 16 symbols long.');
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                });
+            }
+
+            if (input.name === 'Email') {
+                input.addEventListener('sl-input', () => {
+                    if (!input.value.includes('@gmail.com')) {
+                        input.setCustomValidity('We accept only @gmail.com.');
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                });
+            }
+
+            if (input.name === 'BDay') {
+                input.addEventListener('sl-input', () => {
+                    const userDate = new Date(input.value);
+                    const today = new Date();
+                    const validMinDate = new Date().setFullYear(today.getFullYear() - 18);
+                    const validMaxDate = new Date().setFullYear(today.getFullYear() - 100);
+
+                    if (userDate >= validMinDate) {
+                        input.setCustomValidity('You must be at least 18 years old.');
+                    } else if (userDate < validMaxDate) {
+                        input.setCustomValidity('How can you be this old?');
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                });
+            }
+
+            if (input.name === 'Country') {
+                input.addEventListener('sl-input', () => {
+                    if (input.value.trim().length > 28) {
+                        input.setCustomValidity('-_-');
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                });
+            }
+        });
+
+        textInput.addEventListener('sl-input', () => {
+            const pattern = /^[A-Za-z0-9._: ]+$/;
+            if (textInput.value.trim().length > 100)
+            {
+                textInput.setCustomValidity('Up to 100 symbols max.');
+            }
+            else if (!pattern.test(textInput.value))
+            {
+                textInput.setCustomValidity('Only latin letters, numbers and "./: " are permitted.');
+            }
+            else
+            {
+                textInput.setCustomValidity('');
+            }
+        });
+    });
+})();
 
 //cong
 closeButtonCong.addEventListener('click', () => dialogCong.hide());

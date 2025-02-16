@@ -113,6 +113,39 @@ a.menu {
     font-size: 30px;
 }
 
+.dialog-focus::part(title) {
+    font-family: 'PixelFont';
+    font-size: 30px;
+}
+
+.dialog-overview
+{
+    font-family: 'PixelFont';
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.dialog-overview::part(title) {
+    font-family: 'PixelFont';
+    font-size: 30px;
+    letter-spacing: 0px;
+}
+
+sl-input::part(form-control-label), sl-textarea::part(form-control-label){
+    font-family: 'PixelFont';
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+sl-dialog sl-input:not(:first-child)
+{
+    margin-top: 15px;
+}
+
+sl-textarea {
+    margin-top: 15px;
+}
+
 main {
     width: 100%;
     height: auto;

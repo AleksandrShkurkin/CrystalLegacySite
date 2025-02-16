@@ -52,10 +52,10 @@
         </div>
         <div class="buttons-download">
           <sl-button-group class="equal-buttons">
-              <sl-button variant="primary" size="large" class="darkblue" name="winButton">
-                <sl-icon slot="prefix" name="windows"></sl-icon>
-                Windows
-              </sl-button>
+            <sl-button variant="primary" size="large" class="darkblue" name="winButton">
+              <sl-icon slot="prefix" name="windows"></sl-icon>
+              Windows
+            </sl-button>
             </sl-animation>
             <sl-animation>
               <sl-button variant="success" size="large" class="darkgreen" name="linButton">
@@ -252,12 +252,17 @@
   </sl-drawer>
 
   <sl-dialog label="Register for the beta test!" class="dialog-focus">
-    <sl-input autofocus name="Username" label="Username" required placeholder="e.g. Hero5469"></sl-input>
-    <sl-input type="email" name="Email" label="Email" required placeholder="e.g. hero_5469@gmail.com"></sl-input>
-    <sl-input type="date" name="BDay" label="Birth date" required></sl-input>
-    <sl-input name="Country" label="Country" required placeholder="e.g. Ukraine"></sl-input>
-    <sl-textarea rows="5" resize="none" name="PCStats" label="PC characteristics" required placeholder="CPU, GPU, RAM etc."></sl-textarea>
-    <sl-button slot="footer" variant="primary">Register</sl-button>
+    <form id="formReg">
+      <sl-input autofocus name="Username" label="Username" required placeholder="e.g. Hero5469"
+        autocomplete="off"></sl-input>
+      <sl-input type="email" name="Email" label="Email" required placeholder="e.g. hero_5469@gmail.com"
+        autocomplete="off"></sl-input>
+      <sl-input type="date" name="BDay" label="Birth date" required autocomplete="off"></sl-input>
+      <sl-input name="Country" label="Country" required placeholder="e.g. Ukraine" autocomplete="off"></sl-input>
+      <sl-textarea rows="5" resize="none" name="PCStats" label="PC characteristics" required
+        placeholder="CPU, GPU, RAM etc." autocomplete="off"></sl-textarea>
+    </form>
+    <sl-button slot="footer" variant="primary" form="formReg" type="submit">Register</sl-button>
   </sl-dialog>
   <sl-dialog label="Thanks!" class="dialog-overview">
     You are now placed in the queue! Invitation for the beta test will be sent to you via e-mail.
